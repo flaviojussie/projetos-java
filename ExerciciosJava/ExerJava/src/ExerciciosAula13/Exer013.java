@@ -13,9 +13,17 @@ public class Exer013 {
 		float valorHora = in.nextInt();
 		System.out.println("Digite a quantidade de horas trabalhadas no mês: ");
 		float horaMes = in.nextInt();
-		float salario = (valorHora * horaMes);	
-		salario *= (0.05 +0.11 +0.08);
-		System.out.println("O salário do mês é: "+ salario);		
+		float salBruto = (valorHora * horaMes);	
+		float inss = (float) (salBruto*0.08);
+		float sind = (float) (salBruto*0.05);
+		float imp = (float) (salBruto*0.11);
+		float salLiquido = (float) (valorHora*horaMes-(inss+sind+imp));
+		System.out.println("O salário bruto: "+salBruto);
+		System.out.println("Quanto pagou ao INSS: "+inss);
+		System.out.println("Quanto pagou ao sindicato: "+sind);
+		System.out.println("Quanto pagou ao IR: "+imp);
+		System.out.println("O salário líquido: "+salLiquido);	
+		System.out.println("Total de desconto: "+(inss+sind+imp));
 
 	}
 
